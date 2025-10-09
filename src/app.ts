@@ -1,4 +1,5 @@
 import express, { Request, Response } from "express";
+import router from "./routes";
 const buildServer = () => {
   const app = express();
   app.use(express.json());
@@ -11,6 +12,7 @@ const buildServer = () => {
     });
   });
 
+  app.use("/api", router);
   return app;
 };
 
