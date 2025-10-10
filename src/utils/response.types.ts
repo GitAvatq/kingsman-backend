@@ -1,5 +1,8 @@
-export interface ApiResponse<T> {
+export interface ApiResponseNo {
   success: boolean;
-  message: string;
+  message: string | undefined;
+}
+
+export interface ApiResponse<T> extends ApiResponseNo {
   data: T;
 }

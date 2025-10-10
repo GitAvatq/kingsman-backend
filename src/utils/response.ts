@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { ApiResponse } from "./response.types";
+import { ApiResponse, ApiResponseNo } from "./response.types";
 
 export const success = <T>(
   res: Response,
@@ -13,9 +13,12 @@ export const success = <T>(
 
 export const notsuccess = (
   res: Response,
-  message = "Internal Server Error",
+  message?: string,
   statusCode = 500
 ) => {
-  const response = { success: false, message };
+  const response: ApiResponseNo = {
+    success: false,
+    message: message || "Internal Server Error",
+  };
   return res.status(statusCode).json(response);
 };
