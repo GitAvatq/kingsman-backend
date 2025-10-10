@@ -3,6 +3,6 @@ import servicesRoute from "../modules/services/services.route";
 
 const router = Router();
 
-router.use("/servicesList", servicesRoute);
+router.use("/services", servicesRoute);
 
 export default router;

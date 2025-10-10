@@ -13,7 +13,7 @@ export const success = <T>(
 
 export const notsuccess = (
   res: Response,
-  message = "Bad request",
+  message = "Internal Server Error",
   statusCode = 500
 ) => {
   const response = { success: false, message };
