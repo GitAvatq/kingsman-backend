@@ -17,7 +17,6 @@ export class MastersController {
       const masters = await prisma.master.findMany();
       return success(res, masters);
     } catch (error: any) {
-      console.error("MastersController.getAll error:", error);
       return notsuccess(res, error.message);
     }
   };

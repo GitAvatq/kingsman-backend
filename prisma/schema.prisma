@@ -25,5 +25,15 @@ model Master {
   updatedAt DateTime @updatedAt
 }
 
+model Rewievs {
+  id        Int @id @default(autoincrement())
+  name      String
+  text      String
+  location  String
+  image     String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 
 
