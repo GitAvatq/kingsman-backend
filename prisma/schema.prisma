@@ -35,5 +35,26 @@ model Rewievs {
   updatedAt DateTime @updatedAt
 }
 
+model Blog {
+  id          Int @id @default(autoincrement())
+  image       String
+  name        String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Barber {
+  id          Int @id @default(autoincrement())
+  image       String
+  name        String
+  experience  Int
+  status      String
+  earned      Int
+  rating      Int
+  service     Int
+  location    String
+}
+
 
 
