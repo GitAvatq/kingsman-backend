@@ -26,7 +26,7 @@ model Master {
 }
 
 model Rewievs {
-  id        Int @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   name      String
   text      String
   location  String
@@ -35,5 +35,32 @@ model Rewievs {
   updatedAt DateTime @updatedAt
 }
 
+model Barber {
+  id         Int    @id @default(autoincrement())
+  image      String
+  name       String
+  experience Int
+  status     String
+  earned     Int
+  rating     Int
+  service    Int
+  location   String
+}
 
+model Blog {
+  id          Int      @id @default(autoincrement())
+  image       String
+  name        String
+  description String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime
+}
 
+model Fillials {
+  id        Int      @id @default(autoincrement())
+  country   String
+  city      String
+  address   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime
+}
