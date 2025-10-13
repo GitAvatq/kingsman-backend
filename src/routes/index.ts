@@ -2,15 +2,13 @@ import { Router } from "express";
 import servicesRoute from "../modules/services/services.route";
 import mastersRoute from "../modules/masters/masters.route";
 import rewievsRoute from "../modules/rewievs/rewievs.route";
-import blogRoute from "../modules/blog/blog.route";
-import barberRoute from "../modules/barber/barber.route";
+import contactRoute from "../modules/contacts/contacts.route";
 
 const router = Router();
 
 router.use("/services", servicesRoute);
 router.use("/masters", mastersRoute);
 router.use("/rewievs", rewievsRoute);
-router.use("/blog", blogRoute);
-router.use("/barber", barberRoute);
+router.use("/tocontact", contactRoute);
 
 export default router;
