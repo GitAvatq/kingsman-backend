@@ -3,7 +3,8 @@ import servicesRoute from "../modules/services/services.route";
 import mastersRoute from "../modules/masters/masters.route";
 import rewievsRoute from "../modules/rewievs/rewievs.route";
 import contactRoute from "../modules/contacts/contacts.route";
-import registerRoute from "../modules/auth/auth.route";
+import registerRoute from "../modules/auth/register/auth.route";
+import loginRoute from "../modules/auth/login/login.route";
 
 const router = Router();
 
@@ -12,5 +13,6 @@ router.use("/masters", mastersRoute);
 router.use("/rewievs", rewievsRoute);
 router.use("/tocontact", contactRoute);
 router.use("/register", registerRoute);
+router.use("/login", loginRoute);
 
 export default router;

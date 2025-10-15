@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { notsuccess, success } from "../../utils/response";
+import { notsuccess, success } from "../../../utils/response";
 import { createDtoAuth } from "./auth.dto";
-import { prisma } from "../../config/prisma";
+import { prisma } from "../../../config/prisma";
 import bcrypt from "bcrypt";
-import { generateToken } from "../../services/auth.service";
+import { generateToken } from "../../../services/auth.service";
 
 export class RegisterController {
   async registerUser(req: Request, res: Response) {
@@ -12,7 +12,8 @@ export class RegisterController {
       if (!validation.success) {
         return notsuccess(
           res,
-          validation.error.issues.map((i) => i.message).join(" ")
+          validation.error.issues.map((i) => i.message).join(" "),
+          400
         );
       }
       const { email, name, password } = validation.data;
