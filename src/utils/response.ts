@@ -6,7 +6,8 @@ export const success = <T>(
   data: T,
   message = "OK",
   statusCode = 200,
-  oke = true
+  oke = true,
+  token?: string | undefined
 ) => {
   const response: ApiResponse<T> = {
     ok: oke,
@@ -14,6 +15,7 @@ export const success = <T>(
     status_code: statusCode,
     message,
     data,
+    token,
   };
   return res.status(statusCode).json(response);
 };

@@ -36,7 +36,7 @@ model Rewievs {
 }
 
 model Blog {
-  id          Int @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   image       String
   name        String
   description String
@@ -45,15 +45,15 @@ model Blog {
 }
 
 model Barber {
-  id          Int @id @default(autoincrement())
-  image       String
-  name        String
-  experience  Int
-  status      String
-  earned      Int
-  rating      Int
-  service     Int
-  location    String
+  id         Int    @id @default(autoincrement())
+  image      String
+  name       String
+  experience Int
+  status     String
+  earned     Int
+  rating     Int
+  service    Int
+  location   String
 }
 
 model Fillials {
@@ -63,4 +63,11 @@ model Fillials {
   address   String
   createdAt DateTime @default(now())
   updatedAt DateTime
+}
+
+model User {
+  id       String @id @default(uuid())
+  name     String
+  email    String @unique
+  password String
 }

@@ -7,4 +7,5 @@ export interface ApiResponseNo {
 
 export interface ApiResponse<T> extends ApiResponseNo {
   data: T;
+  token: string | undefined;
 }

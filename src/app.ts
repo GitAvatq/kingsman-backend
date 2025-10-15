@@ -5,8 +5,8 @@ import { helmetConfig } from "./config/helmet";
 const buildServer = () => {
   const app = express();
   app.use(express.json());
-  app.use(corsConfig, helmetConfig);
-
+  app.use(corsConfig);
+  app.use(helmetConfig);
   app.get("/", (req: Request, res: Response) => {
     res.status(200).json({
       success: true,
