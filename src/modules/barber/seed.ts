@@ -10,6 +10,7 @@ export const barberSeed = [
     rating: 4.9,
     service: 320,
     location: "Bishkek, chui ave 12",
+    fillialId: 1,
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ export const barberSeed = [
     rating: 4.9,
     service: 320,
     location: "Bishkek, chui ave 12",
+    fillialId: 2,
   },
   {
     id: 3,
@@ -34,6 +36,7 @@ export const barberSeed = [
     rating: 4.9,
     service: 320,
     location: "Bishkek, chui ave 12",
+    fillialId: 3,
   },
   {
     id: 4,
@@ -46,6 +49,7 @@ export const barberSeed = [
     rating: 4.9,
     service: 320,
     location: "Bishkek, chui ave 12",
+    fillialId: 4,
   },
   {
     id: 5,
@@ -58,6 +62,7 @@ export const barberSeed = [
     rating: 4.9,
     service: 320,
     location: "Bishkek, chui ave 12",
+    fillialId: 5,
   },
   {
     id: 6,
@@ -70,5 +75,6 @@ export const barberSeed = [
     rating: 4.9,
     service: 320,
     location: "Bishkek, chui ave 12",
+    fillialId: 6,
   },
 ];

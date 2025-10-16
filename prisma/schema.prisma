@@ -54,7 +54,20 @@ model Barber {
   rating      Int
   service     Int
   location    String
+  fillialId   Int
+  fillial     Fillials @relation(fields: [fillialId], references: [id])
 }
+
+model Fillials {
+  id        Int      @id @default(autoincrement())
+  country   String
+  city      String
+  address   String
+  barbers   Barber[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 
 
 
