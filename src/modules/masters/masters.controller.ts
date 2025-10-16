@@ -51,7 +51,7 @@ export class MastersController {
     const { id } = req.params;
     try {
       await prisma.master.delete({ where: { id: Number(id) } });
-      return success(res, null, "Master deleted");
+      success(res, null, "Master deleted");
     } catch (error: any) {
       return notsuccess(res, error.message);
     }

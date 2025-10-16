@@ -45,15 +45,17 @@ model Blog {
 }
 
 model Barber {
-  id         Int    @id @default(autoincrement())
-  image      String
-  name       String
-  experience Int
-  status     String
-  earned     Int
-  rating     Int
-  service    Int
-  location   String
+  id          Int @id @default(autoincrement())
+  image       String
+  name        String
+  experience  Int
+  status      String
+  earned      Int
+  rating      Int
+  service     Int
+  location    String
+  fillialId   Int
+  fillial     Fillials @relation(fields: [fillialId], references: [id])
 }
 
 model Fillials {
@@ -61,9 +63,11 @@ model Fillials {
   country   String
   city      String
   address   String
+  barbers   Barber[]
   createdAt DateTime @default(now())
-  updatedAt DateTime
+  updatedAt DateTime @updatedAt
 }
+
 
 model User {
   id       String @id @default(uuid())
@@ -71,3 +75,4 @@ model User {
   email    String @unique
   password String
 }
+

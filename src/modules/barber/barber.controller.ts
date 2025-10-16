@@ -27,18 +27,21 @@ export class BarberController {
       rating,
       service,
       location,
+      fillialId, // 👈 обязательно добавить в тело запроса
     } = req.body;
+
     try {
       const barber = await prisma.barber.create({
         data: {
           image,
           name,
-          experience,
+          experience: Number(experience),
           status,
-          earned,
-          rating,
-          service,
+          earned: Number(earned),
+          rating: Number(rating),
+          service: Number(service),
           location,
+          fillialId: Number(fillialId), // 👈 вот это ключ
         },
       });
 
@@ -84,7 +87,6 @@ export class BarberController {
 
   delete = async (req: Request, res: Response) => {
     const { id } = req.params;
-
     try {
       await prisma.barber.delete({
         where: { id: Number(id) },
