@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import { prisma } from "../../config/prisma";
 import { notsuccess, success } from "../../utils/response";
 import { barberSeed } from "./seed";
+import { barbersWorks } from "./barberWorks";
 
 export class BarberController {
   getAll = async (req: Request, res: Response) => {
@@ -41,7 +42,7 @@ export class BarberController {
           rating: Number(rating),
           service: Number(service),
           location,
-          fillialId: Number(fillialId), 
+          fillialId: Number(fillialId),
         },
       });
 

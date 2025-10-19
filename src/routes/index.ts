@@ -8,6 +8,7 @@ import fillialsRoute from "../modules/fillials/fillials.route";
 import registerRoute from "../modules/auth/register/auth.route";
 import loginRoute from "../modules/auth/login/login.route";
 import contactRoute from "../modules/contacts/contacts.route";
+import barberDetailsRoute from "../modules/getDetail/details.route";
 
 const router = Router();
 
@@ -15,10 +16,11 @@ router.use("/services", servicesRoute);
 router.use("/masters", mastersRoute);
 router.use("/rewievs", rewievsRoute);
 router.use("/blog", blogRoute);
-router.use("/barber", barberRoute);
+router.use("/barbers", barberRoute);
 router.use("/fillials", fillialsRoute);
 router.use("/register", registerRoute);
 router.use("/login", loginRoute);
 router.use("/contact", contactRoute);
+router.use("/barberDetails", barberDetailsRoute);
 
 export default router;
