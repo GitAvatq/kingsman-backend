@@ -72,10 +72,11 @@ model Fillials {
 }
 
 model User {
-  id       String @id @default(uuid())
-  name     String
-  email    String @unique
-  password String
+  id          String        @id @default(uuid())
+  name        String
+  email       String        @unique
+  password    String
+  Appointment Appointment[]
 }
 
 model Works {
@@ -89,8 +90,10 @@ model Works {
 model Appointment {
   id         Int      @id @default(autoincrement())
   date       DateTime
+  user       User     @relation(fields: [userId], references: [id])
   service    Services @relation(fields: [servicesId], references: [id])
   servicesId Int
   barber     Barber   @relation(fields: [barberId], references: [id])
   barberId   Int
+  userId     String
 }
