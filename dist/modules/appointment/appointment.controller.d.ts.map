@@ -1,0 +1,1 @@
+{"version":3,"file":"appointment.controller.d.ts","sourceRoot":"","sources":["../../../src/modules/appointment/appointment.controller.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,OAAO,EAAE,QAAQ,EAAE,MAAM,SAAS,CAAC;AAI5C,cAAM,qBAAqB;IACnB,kBAAkB,CAAC,GAAG,EAAE,OAAO,EAAE,GAAG,EAAE,QAAQ;CAkBrD;AAED,QAAA,MAAM,qBAAqB,uBAA8B,CAAC;AAC1D,eAAe,qBAAqB,CAAC"}
