@@ -21,6 +21,17 @@ class AppointmentController {
       return notsuccess(res, error.message);
     }
   }
+  async getAppointments(req: Request, res: Response) {
+    try {
+      const appointments = await prisma.appointment.findMany({
+        include: { service: true, barber: true, user: true },
+      });
+
+      return success(res, appointments, "Success");
+    } catch (error: any) {
+      return notsuccess(res, error.message);
+    }
+  }
 }
 
 const appointmentController = new AppointmentController();
