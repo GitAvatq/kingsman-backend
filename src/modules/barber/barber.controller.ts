@@ -27,7 +27,7 @@ export class BarberController {
       rating,
       service,
       location,
-      fillialId, // 👈 обязательно добавить в тело запроса
+      fillialId,
     } = req.body;
 
     try {
@@ -41,7 +41,7 @@ export class BarberController {
           rating: Number(rating),
           service: Number(service),
           location,
-          fillialId: Number(fillialId), // 👈 вот это ключ
+          fillialId: Number(fillialId),
         },
       });
 
@@ -91,7 +91,7 @@ export class BarberController {
       await prisma.barber.delete({
         where: { id: Number(id) },
       });
-      return success(res, null, "Barber deleted!!!😡");
+      return success(res, null, "Barber deleted!");
     } catch (error: any) {
       return notsuccess(res, error.message);
     }

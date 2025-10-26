@@ -45,17 +45,18 @@ model Blog {
 }
 
 model Barber {
-  id          Int @id @default(autoincrement())
-  image       String
-  name        String
-  experience  Int
-  status      String
-  earned      Int
-  rating      Int
-  service     Int
-  location    String
-  fillialId   Int
-  fillial     Fillials @relation(fields: [fillialId], references: [id])
+  id         Int      @id @default(autoincrement())
+  image      String
+  name       String
+  experience Int
+  status     String
+  earned     Int
+  rating     Int
+  service    Int
+  location   String
+  fillialId  Int
+  fillial    Fillials @relation(fields: [fillialId], references: [id])
+  works      Works[]
 }
 
 model Fillials {
@@ -68,7 +69,6 @@ model Fillials {
   updatedAt DateTime @updatedAt
 }
 
-
 model User {
   id       String @id @default(uuid())
   name     String
@@ -76,3 +76,10 @@ model User {
   password String
 }
 
+model Works {
+  id           Int    @id @default(autoincrement())
+  picture_hair String
+  name_hair    String
+  Barber       Barber @relation(fields: [barberId], references: [id])
+  barberId     Int
+}
