@@ -16,7 +16,6 @@ export class BlogController {
       return notsuccess(res, error.message);
     }
   };
-
   create = async (req: Request, res: Response) => {
     const { image, name, description } = req.body;
     try {
@@ -29,7 +28,6 @@ export class BlogController {
       return notsuccess(res, error.message);
     }
   };
-
   update = async (req: Request, res: Response) => {
     const { id } = req.params;
     const { image, name, description } = req.body;
@@ -45,7 +43,6 @@ export class BlogController {
       return notsuccess(res, error.message);
     }
   };
-
   delete = async (req: Request, res: Response) => {
     const { id } = req.params;
 

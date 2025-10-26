@@ -22,6 +22,7 @@ export class LoginController {
       const existingUser = await prisma.user.findUnique({
         where: { email },
       });
+      
       if (!existingUser) {
         return notsuccess(res, "Invalid credentials");
       }

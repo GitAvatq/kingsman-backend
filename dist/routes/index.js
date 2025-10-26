@@ -1,0 +1,32 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const services_route_1 = __importDefault(require("../modules/services/services.route"));
+const masters_route_1 = __importDefault(require("../modules/masters/masters.route"));
+const rewievs_route_1 = __importDefault(require("../modules/rewievs/rewievs.route"));
+const blog_route_1 = __importDefault(require("../modules/blog/blog.route"));
+const barber_route_1 = __importDefault(require("../modules/barber/barber.route"));
+const fillials_route_1 = __importDefault(require("../modules/fillials/fillials.route"));
+const auth_route_1 = __importDefault(require("../modules/auth/register/auth.route"));
+const login_route_1 = __importDefault(require("../modules/auth/login/login.route"));
+const contacts_route_1 = __importDefault(require("../modules/contacts/contacts.route"));
+const details_route_1 = __importDefault(require("../modules/getDetail/details.route"));
+const appointment_route_1 = __importDefault(require("../modules/appointment/appointment.route"));
+const auth_middleware_1 = require("../middleware/auth.middleware");
+const router = (0, express_1.Router)();
+router.use("/services", services_route_1.default);
+router.use("/masters", masters_route_1.default);
+router.use("/rewievs", rewievs_route_1.default);
+router.use("/blog", blog_route_1.default);
+router.use("/barbers", barber_route_1.default);
+router.use("/fillials", fillials_route_1.default);
+router.use("/register", auth_route_1.default);
+router.use("/login", login_route_1.default);
+router.use("/contact", contacts_route_1.default);
+router.use("/barberDetails", details_route_1.default);
+router.use("/appointments", auth_middleware_1.authMiddleware, appointment_route_1.default);
+exports.default = router;
+//# sourceMappingURL=index.js.map

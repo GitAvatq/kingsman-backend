@@ -2,7 +2,6 @@ import { Router } from "express";
 import { BarberController } from "./barber.controller";
 
 const router = Router();
-
 const barberControllor = new BarberController();
 
 router.get("/", barberControllor.getAll);

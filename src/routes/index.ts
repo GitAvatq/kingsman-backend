@@ -9,6 +9,8 @@ import registerRoute from "../modules/auth/register/auth.route";
 import loginRoute from "../modules/auth/login/login.route";
 import contactRoute from "../modules/contacts/contacts.route";
 import barberDetailsRoute from "../modules/getDetail/details.route";
+import appointmentsRoute from "../modules/appointment/appointment.route";
+import { authMiddleware } from "../middleware/auth.middleware";
 
 const router = Router();
 
@@ -22,5 +24,6 @@ router.use("/register", registerRoute);
 router.use("/login", loginRoute);
 router.use("/contact", contactRoute);
 router.use("/barberDetails", barberDetailsRoute);
+router.use("/appointments", authMiddleware, appointmentsRoute);
 
 export default router;

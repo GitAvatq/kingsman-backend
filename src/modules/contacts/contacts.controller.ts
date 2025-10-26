@@ -21,7 +21,6 @@ export class ContactsController {
       Email: ${email} 
       City: ${city}
         `;
-
       await axios.post(
         `https://api.telegram.org/bot${process.env.TG_BOT_TOKEN}/sendMessage`,
         {
