@@ -25,15 +25,22 @@ export class RegisterController {
       if (existing) return notsuccess(res, "This user is already exists!", 409);
 
       const passwordHash = await bcrypt.hash(password, 10);
+
       const user = await prisma.user.create({
         data: { name, email, password: passwordHash },
+        include: { Appointment: true },
       });
 
       const token = generateToken(user.id, user.email);
 
       success(
         res,
-        { id: user.id, name: user.name, email: user.email },
+        {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+          appointment: user.Appointment,
+        },
         "Success Registration",
         201,
         true,
