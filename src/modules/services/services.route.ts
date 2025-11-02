@@ -5,5 +5,6 @@ const router = Router();
 const barbershopServices = new ServicesController();
 
 router.get("/", barbershopServices.services);
+router.post("/create", barbershopServices.createService);
 
 export default router;

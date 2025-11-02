@@ -19,4 +19,24 @@ export class ServicesController {
       return notsuccess(res, error.message);
     }
   }
+  async createService(req: Request, res: Response) {
+    try {
+      const { name, price } = req.body;
+
+      if (!name || !price) {
+        return notsuccess(res, "Missing required fields");
+      }
+
+      const newService = await prisma.services.create({
+        data: {
+          name,
+          price,
+        },
+      });
+
+      return success(res, newService);
+    } catch (error: any) {
+      return notsuccess(res, error.message);
+    }
+  }
 }
