@@ -1,6 +1,5 @@
 export const barberSeed = [
   {
-    id: 1,
     image:
       "https://t4.ftcdn.net/jpg/04/25/57/89/360_F_425578972_6sFzeIVu2WnbAvxIbJWnOQMZG9TUwoJt.jpg",
     name: "Bek",
@@ -13,7 +12,6 @@ export const barberSeed = [
     fillialId: 1,
   },
   {
-    id: 2,
     image:
       "https://t4.ftcdn.net/jpg/04/25/57/89/360_F_425578972_6sFzeIVu2WnbAvxIbJWnOQMZG9TUwoJt.jpg",
     name: "Bek",
@@ -26,7 +24,6 @@ export const barberSeed = [
     fillialId: 2,
   },
   {
-    id: 3,
     image:
       "https://t4.ftcdn.net/jpg/04/25/57/89/360_F_425578972_6sFzeIVu2WnbAvxIbJWnOQMZG9TUwoJt.jpg",
     name: "Bek",
@@ -39,7 +36,6 @@ export const barberSeed = [
     fillialId: 3,
   },
   {
-    id: 4,
     image:
       "https://t4.ftcdn.net/jpg/04/25/57/89/360_F_425578972_6sFzeIVu2WnbAvxIbJWnOQMZG9TUwoJt.jpg",
     name: "Bek",
@@ -52,7 +48,6 @@ export const barberSeed = [
     fillialId: 4,
   },
   {
-    id: 5,
     image:
       "https://t4.ftcdn.net/jpg/04/25/57/89/360_F_425578972_6sFzeIVu2WnbAvxIbJWnOQMZG9TUwoJt.jpg",
     name: "Bek",
@@ -65,7 +60,6 @@ export const barberSeed = [
     fillialId: 5,
   },
   {
-    id: 6,
     image:
       "https://t4.ftcdn.net/jpg/04/25/57/89/360_F_425578972_6sFzeIVu2WnbAvxIbJWnOQMZG9TUwoJt.jpg",
     name: "Bek",
