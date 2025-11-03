@@ -6,10 +6,13 @@ import { blogSeed } from "./seed";
 export class BlogController {
   getAll = async (req: Request, res: Response) => {
     try {
-      await prisma.blog.createMany({
-        data: blogSeed,
-        skipDuplicates: true,
-      });
+      const count = await prisma.blog.count();
+      if (count === 0) {
+        await prisma.blog.createMany({
+          data: blogSeed,
+          skipDuplicates: true,
+        });
+      }
       const blog = await prisma.blog.findMany();
       return success(res, blog);
     } catch (error: any) {
