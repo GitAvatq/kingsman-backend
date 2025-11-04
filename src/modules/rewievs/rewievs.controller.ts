@@ -6,10 +6,13 @@ import { notsuccess, success } from "../../utils/response";
 export class RewievsController {
   getAll = async (req: Request, res: Response) => {
     try {
-      await prisma.rewievs.createMany({
-        data: rewievsSeed,
-        skipDuplicates: true,
-      });
+      const count = await prisma.rewievs.count();
+      if (count === 0) {
+        await prisma.rewievs.createMany({
+          data: rewievsSeed,
+          skipDuplicates: true,
+        });
+      }
       const rewiev = await prisma.rewievs.findMany();
       return success(res, rewiev);
     } catch (error: any) {

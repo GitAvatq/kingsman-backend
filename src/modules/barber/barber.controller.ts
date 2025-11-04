@@ -6,10 +6,13 @@ import { barberSeed } from "./seed";
 export class BarberController {
   getAll = async (req: Request, res: Response) => {
     try {
-      await prisma.barber.createMany({
-        data: barberSeed,
-        skipDuplicates: true,
-      });
+       const count = await prisma.barber.count()
+       if (count === 0) {
+         await prisma.barber.createMany({
+           data: barberSeed,
+           skipDuplicates: true,
+          });
+        }
       const barber = await prisma.barber.findMany();
       return success(res, barber);
     } catch (error: any) {
