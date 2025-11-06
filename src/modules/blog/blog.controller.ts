@@ -20,10 +20,10 @@ export class BlogController {
     }
   };
   create = async (req: Request, res: Response) => {
-    const { image, name, description, content } = req.body;
+    const { image, name, description } = req.body;
     try {
       const blog = await prisma.blog.create({
-        data: { image, name, description, content },
+        data: { image, name, description },
       });
       return success(res, blog, "Blog created");
     } catch (error: any) {
